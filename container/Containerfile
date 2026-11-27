@@ -1,0 +1,15 @@
+FROM registry.access.redhat.com/ubi9/httpd-24
+
+USER root
+
+COPY index.html /var/www/html/
+
+RUN mkdir /opt/app-data && chmod -R 0 /opt/app-data && chmod -R g=u /opt/app-data
+
+ENV APP_VERSION=1.0
+
+EXPOSE 8080
+
+USER 1001
+
+
