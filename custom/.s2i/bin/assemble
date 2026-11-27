@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e 
+
+/usr/libexec/s2i/assemble
+
+echo ${GREETING} > /opt/app-root/src/greeting.txt
+
+
